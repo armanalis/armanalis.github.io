@@ -16,14 +16,14 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2018 - 2022"
+            date="2022 - 2026"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />} // You can change this icon
           >
             <h3 className="vertical-timeline-element-title">Bachelor's Degree</h3>
             <h4 className="vertical-timeline-element-subtitle">Politecnico di Torino</h4>
             <p>
-              I graduated with a Bachelor's degree in Computer Engineering from Politecnico di Torino. During my studies, I gained a solid foundation in computer science, programming, and software development.
+              I will graduate with a Bachelor's degree in Computer Engineering from Politecnico di Torino. During my studies, I gained a solid foundation in computer science, programming, and software development.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
