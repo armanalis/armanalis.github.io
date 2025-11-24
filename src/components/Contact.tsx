@@ -25,7 +25,7 @@ function Contact() {
     setEmailError(email === '');
     setMessageError(message === '');
 
-
+/*
      if (name !== '' && email !== '' && message !== '') {
         var templateParams = {
          name: name,
@@ -34,19 +34,22 @@ function Contact() {
        };
 
         console.log(templateParams);
-        emailjs.send('service_8vcz4qj', 'template_zd3tdkx', templateParams, '445DcUl21-HkkAcfa').then(
-         (response) => {
-           console.log('SUCCESS!', response.status, response.text);
-         },
-         (error) => {
-           console.log('FAILED...', error);
-         },
-       );
+        emailjs.send('service_8vcz4qj', 'template_zd3tdkx', templateParams, {
+          publicKey: '445DcUl21-HkkAcfa',
+        }).then(
+          (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+          },
+          (error) => {
+            console.log('FAILED...', error);
+          },
+        );
        setName('');
        setEmail('');
        setMessage('');
-     }
+     }*/
   };
+
 
   return (
     <div id="contact">

@@ -8,11 +8,39 @@
         color: white;
     }
 }
-  
+
+/* New Split Layout */
+.split-section {
+    display: flex;
+    flex-direction: row; /* Side by side on desktop */
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.expertise-section {
+    flex: 2; /* Takes up more space */
+    min-width: 0; /* Prevents grid overflow */
+}
+
+.about-section-text {
+    flex: 1; /* Takes up less space */
+    padding-top: 10px;
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
 .skills-container .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns to fit better */
+    grid-gap: 30px;
 }
   
 .skills-container .skills-grid .skill {
@@ -61,6 +89,22 @@
 }
 
 @media screen {
+    @media (max-width: 992px) {
+        /* Stack them vertically on smaller screens */
+        .split-section {
+            flex-direction: column-reverse; /* Puts About text on top, or use 'column' for bottom */
+            gap: 30px;
+        }
+        
+        .skills-container .skills-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        .about-section-text {
+            width: 100%;
+        }
+    }
+
     @media (max-width: 768px) {
         .skills-container {
             display: block;
