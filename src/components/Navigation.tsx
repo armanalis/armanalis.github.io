@@ -17,8 +17,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
-const navItems = [['About', 'about'], ['Education', 'education'], ['Projects', 'projects'], ['Contact', 'contact']];
-
+// Find the navItems array (around line 15) and update it:
+const navItems = [
+  ['About', 'about'],
+  ['Expertise', 'expertise'],
+  ['Education', 'education'],
+  ['Projects', 'projects'],
+  ['Contact', 'contact']
+];
 function Navigation({parentToChild, modeChange}: any) {
 
   const {mode} = parentToChild;
