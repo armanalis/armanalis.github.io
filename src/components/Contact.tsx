@@ -25,28 +25,27 @@ function Contact() {
     setEmailError(email === '');
     setMessageError(message === '');
 
-    /* Uncomment below if you want to enable the emailJS */
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+     if (name !== '' && email !== '' && message !== '') {
+        var templateParams = {
+         name: name,
+         email: email,
+         message: message
+       };
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+        console.log(templateParams);
+        emailjs.send('service_8vcz4qj', 'template_zd3tdkx', templateParams, '445DcUl21-HkkAcfa').then(
+         (response) => {
+           console.log('SUCCESS!', response.status, response.text);
+         },
+         (error) => {
+           console.log('FAILED...', error);
+         },
+       );
+       setName('');
+       setEmail('');
+       setMessage('');
+     }
   };
 
   return (
