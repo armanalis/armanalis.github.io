@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/armanalis.github.io/static/css/main.234c7ab6.css",
+    "main.js": "/armanalis.github.io/static/js/main.44d289c4.js",
+    "static/js/453.b05d8aa5.chunk.js": "/armanalis.github.io/static/js/453.b05d8aa5.chunk.js",
+    "static/media/bg-light.png": "/armanalis.github.io/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/bg-dark.png": "/armanalis.github.io/static/media/bg-dark.f420c6b8458af72de935.png",
+    "static/media/mock01.png": "/armanalis.github.io/static/media/mock01.61bd486a54bf6e17ee5a.png",
+    "index.html": "/armanalis.github.io/index.html",
+    "main.234c7ab6.css.map": "/armanalis.github.io/static/css/main.234c7ab6.css.map",
+    "main.44d289c4.js.map": "/armanalis.github.io/static/js/main.44d289c4.js.map",
+    "453.b05d8aa5.chunk.js.map": "/armanalis.github.io/static/js/453.b05d8aa5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.234c7ab6.css",
+    "static/js/main.44d289c4.js"
+  ]
+}
