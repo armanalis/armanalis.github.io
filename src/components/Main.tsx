@@ -28,9 +28,7 @@ function Main() {
           {/* New Paragraph Section */}
           <div className="about-text">
             <p>
-              I am a passionate software engineer aiming to build scalable and efficient solutions. 
-              With expertise in modern web technologies, I focus on creating user-centric applications 
-              that solve real-world problems.
+            I’m a computer engineering student who loves building software that actually solves problems. I'm really into automation and AI—basically finding ways to make systems smarter and more efficient.
             </p>
           </div>
         </div>
