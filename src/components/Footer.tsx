@@ -5,12 +5,15 @@ import '../assets/styles/Footer.scss'
 
 function Footer() {
   return (
-    <footer>
-      <div>
-        <a href="https://github.com/armanalis" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-        <a href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <p className="footer-brand">Ali Arman Dai</p>
+        <div className="footer-links">
+          <a href="https://github.com/armanalis" target="_blank" rel="noreferrer" aria-label="GitHub"><GitHubIcon/></a>
+          <a href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedInIcon/></a>
+        </div>
+        <p className="footer-note">Designed &amp; built by Ali Arman Dai</p>
       </div>
-      <p>A portfolio designed & built by Ali Arman Dai</p>
     </footer>
   );
 }

@@ -1,39 +1,50 @@
 import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import DownloadIcon from '@mui/icons-material/Download';
 import '../assets/styles/Main.scss';
+import ProfileImage from '../assets/images/profile.png';
 
 function Main() {
-
   return (
-    <div className="container">
-      {/* Add the id="about" here so navigation works */}
-      <div className="about-section" id="about">
-        <div className="image-wrapper">
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQF_14865828/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718283227073?e=1737590400&v=beta&t=__P-VqP92QJaV4Pp-7J4uvMdgz_an47072lQ07WnjrU" alt="Avatar" />
+    <section className="hero" id="home">
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <p className="hero-kicker">
+            MSc in Data Science and Engineering @ Politecnico di Torino
+          </p>
+          <h1 className="hero-brand">Ali Arman Dai</h1>
+          <p className="hero-role">Data Science &amp; Engineering</p>
+          <p className="hero-lede">
+            Building software that solves real problems — with automation, AI, and systems that stay efficient under pressure.
+          </p>
+          <div className="hero-actions">
+            <a
+              className="btn-primary"
+              href={process.env.PUBLIC_URL + '/Resume.pdf'}
+              target="_blank"
+              rel="noreferrer"
+              download="Ali_Arman_Dai_Resume.pdf"
+            >
+              <DownloadIcon fontSize="small" />
+              Download Resume
+            </a>
+            <a className="btn-ghost" href="https://github.com/armanalis" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <GitHubIcon fontSize="small" />
+              GitHub
+            </a>
+            <a className="btn-ghost" href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <LinkedInIcon fontSize="small" />
+              LinkedIn
+            </a>
+          </div>
         </div>
-        <div className="content">
-          <div className="social_icons">
-            <a href="https://github.com/armanalis" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-          </div>
-          <h1>Ali Arman Dai</h1>
-          <p>Computer Engineering Student</p>
 
-          <div className="mobile_social_icons">
-            <a href="https://github.com/armanalis" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-          </div>
-          
-          {/* New Paragraph Section */}
-          <div className="about-text">
-            <p>
-            I’m a computer engineering student who loves building software that actually solves problems. I'm really into automation and AI—basically finding ways to make systems smarter and more efficient.
-            </p>
-          </div>
+        <div className="hero-portrait">
+          <img src={ProfileImage} alt="Ali Arman Dai" />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

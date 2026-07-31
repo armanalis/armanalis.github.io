@@ -1,5 +1,5 @@
-.education-section {
-  .edu-list {
+.experience-section {
+  .exp-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
     gap: 1rem;
   }
 
-  .edu-item {
+  .exp-item {
     display: grid;
     grid-template-columns: minmax(9rem, 12rem) 1fr;
     gap: 1.5rem;
@@ -15,21 +15,21 @@
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   }
 
-  .edu-item:hover {
+  .exp-item:hover {
     transform: translateY(-3px);
     border-color: rgba(46, 196, 182, 0.4);
     background: var(--glass-strong);
   }
 
-  .edu-meta {
+  .exp-meta {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.55rem;
     border-right: 1px solid var(--line);
     padding-right: 1.25rem;
   }
 
-  .edu-index {
+  .exp-index {
     font-family: var(--font-display);
     font-size: 2rem;
     letter-spacing: -0.04em;
@@ -37,22 +37,15 @@
     line-height: 1;
   }
 
-  .edu-date {
+  .exp-date,
+  .exp-location {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.04em;
     color: var(--text-muted);
   }
 
-  .edu-location {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    color: var(--text-muted);
-    opacity: 0.85;
-  }
-
-  .edu-body {
+  .exp-body {
     h3 {
       margin: 0 0 0.35rem;
       font-size: clamp(1.25rem, 2.2vw, 1.65rem);
@@ -69,18 +62,31 @@
     p {
       margin: 0;
       color: var(--text-muted);
-      max-width: 42rem;
+      max-width: 44rem;
+    }
+  }
+
+  .exp-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.65rem;
+    max-width: 48rem;
+
+    li {
+      color: var(--text-muted);
+      padding-left: 0.15rem;
     }
   }
 }
 
 @media (max-width: 720px) {
-  .education-section .edu-item {
+  .experience-section .exp-item {
     grid-template-columns: 1fr;
     gap: 0.85rem;
   }
 
-  .education-section .edu-meta {
+  .experience-section .exp-meta {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
@@ -91,7 +97,7 @@
     padding-bottom: 0.85rem;
   }
 
-  .education-section .edu-location {
+  .experience-section .exp-location {
     width: 100%;
   }
 }
