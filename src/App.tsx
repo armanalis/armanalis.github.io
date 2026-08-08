@@ -11,6 +11,7 @@ import {
   Footer,
 } from "./components";
 import FadeIn from './components/FadeIn';
+import AuroraBackground from './components/AuroraBackground';
 import './index.scss';
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
 
     return (
     <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <div className="aurora-bg" aria-hidden="true" />
+        <AuroraBackground />
         <div className="site-content">
           <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
           <FadeIn transitionDuration={700}>
