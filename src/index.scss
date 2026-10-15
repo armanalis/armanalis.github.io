@@ -35,8 +35,10 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  // Matches what MUI's CssBaseline used to force, so the layout does not shift.
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--ink);
@@ -85,6 +87,19 @@ h1, h2, h3, h4, h5 {
   min-height: 100vh;
   overflow-x: clip;
   background: var(--ink);
+  color: var(--text);
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  font-size: 1.5rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.icon-small {
+  font-size: 1.25rem;
 }
 
 .aurora-bg {
@@ -186,8 +201,13 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .aurora-orb,
-  .aurora-veil {
+  .aurora-veil,
+  .nav-drawer[open] {
     animation: none !important;
   }
 }
@@ -311,12 +331,31 @@ h1, h2, h3, h4, h5 {
   transform: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .navigation-bar {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   background: transparent !important;
   min-height: 72px;
+  padding: 0 16px;
 
   button {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 1.75;
     font-size: 0.92rem;
     font-family: var(--font-body);
     text-transform: none;
@@ -334,9 +373,56 @@ h1, h2, h3, h4, h5 {
   svg {
     cursor: pointer;
   }
+
+  .nav-brand {
+    display: none;
+    font-weight: 700;
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+
+    button {
+      min-width: 64px;
+      justify-content: center;
+    }
+  }
+
+  .nav-menu-btn {
+    margin: 0 8px 0 -12px;
+  }
+
+  .nav-mode-btn {
+    margin-left: 8px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 24px;
+
+    .nav-brand {
+      display: inline-flex;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-menu-btn {
+      display: none;
+    }
+  }
 }
 
 #navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
   background: transparent !important;
   box-shadow: none !important;
   transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
@@ -359,6 +445,59 @@ h1, h2, h3, h4, h5 {
     color: var(--text);
     font-family: var(--font-body);
   }
+}
+
+.nav-drawer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 260px;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  overflow-y: auto;
+
+  hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  button:hover {
+    background: var(--glass-strong);
+  }
+}
+
+.nav-drawer[open] {
+  animation: drawer-in 225ms ease-out;
+}
+
+.nav-drawer::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+html:has(.nav-drawer[open]) {
+  overflow: hidden;
+}
+
+@keyframes drawer-in {
+  from { transform: translateX(-100%); }
 }
 
 .mobile-menu-top {
@@ -450,16 +589,6 @@ h1, h2, h3, h4, h5 {
   .section-lede,
   .hero-lede {
     color: rgba(7, 21, 28, 0.78);
-  }
-
-  .chip {
-    background: rgba(7, 21, 28, 0.06) !important;
-    color: var(--text) !important;
-    border-color: rgba(7, 21, 28, 0.14) !important;
-
-    span {
-      color: var(--text) !important;
-    }
   }
 
   a:hover {

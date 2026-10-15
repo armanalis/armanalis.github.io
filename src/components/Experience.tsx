@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/styles/Experience.scss';
+import '../assets/styles/Entries.scss';
 
 const experiences = [
   {
@@ -34,19 +34,19 @@ function Experience() {
         <p className="section-lede">Applied analytics and campus leadership — from production data pipelines to student community programs.</p>
       </div>
 
-      <ol className="exp-list">
+      <ol className="entry-list">
         {experiences.map((item) => (
-          <li key={item.index} className="exp-item glass-soft">
-            <div className="exp-meta">
-              <span className="exp-index">{item.index}</span>
-              <span className="exp-date">{item.date}</span>
-              <span className="exp-location">{item.location}</span>
+          <li key={item.index} className="entry-item glass-soft">
+            <div className="entry-meta">
+              <span className="entry-index">{item.index}</span>
+              <span className="entry-date">{item.date}</span>
+              <span className="entry-location">{item.location}</span>
             </div>
-            <div className="exp-body">
+            <div className="entry-body">
               <h3>{item.title}</h3>
               <h4>{item.company}</h4>
               {'bullets' in item && item.bullets ? (
-                <ul className="exp-bullets">
+                <ul className="entry-bullets">
                   {item.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}

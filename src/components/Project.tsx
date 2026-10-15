@@ -1,8 +1,8 @@
 import React from "react";
-import LeetCode from '../assets/images/LeetCode.png';
-import UAVproject from '../assets/images/UAV.png';
-import BudgetPlanner from '../assets/images/budget-planner.png';
-import LanguageQuiz from '../assets/images/language-quiz.png';
+import LeetCode from '../assets/images/LeetCode.webp';
+import UAVproject from '../assets/images/UAV.webp';
+import BudgetPlanner from '../assets/images/budget-planner.webp';
+import LanguageQuiz from '../assets/images/language-quiz.webp';
 import '../assets/styles/Project.scss';
 
 const projects = [
@@ -57,7 +57,7 @@ function Project() {
         {projects.map((project) => (
           <article key={project.title} className="project glass-soft">
             <a href={project.href} target="_blank" rel="noreferrer" className="project-media">
-              <img src={project.img} alt={project.alt} />
+              <img src={project.img} alt={project.alt} loading="lazy" />
             </a>
             <div className="project-body">
               <a href={project.href} target="_blank" rel="noreferrer">

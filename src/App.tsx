@@ -10,23 +10,13 @@ import {
   Navigation,
   Footer,
 } from "./components";
-import FadeIn from './components/FadeIn';
 import AuroraBackground from './components/AuroraBackground';
-import './index.scss';
 
 function App() {
-    const [mode, setMode] = useState<string>('dark');
-
-    const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
+    const [mode, setMode] = useState<'dark' | 'light'>('dark');
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        window.scrollTo({top: 0, left: 0});
       }, []);
 
     useEffect(() => {
@@ -42,32 +32,22 @@ function App() {
         { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
       );
 
-      const observeAll = () => {
-        document.querySelectorAll('.reveal:not(.is-visible)').forEach((node) => observer.observe(node));
-      };
-
-      observeAll();
-      const timer = window.setTimeout(observeAll, 800);
-      return () => {
-        observer.disconnect();
-        window.clearTimeout(timer);
-      };
+      document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+      return () => observer.disconnect();
     }, []);
 
     return (
     <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
         <AuroraBackground />
         <div className="site-content">
-          <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-          <FadeIn transitionDuration={700}>
-              <Main/>
-              <About/>
-              <Experience/>
-              <Timeline/>
-              <Project/>
-              <Awards/>
-              <Contact/>
-          </FadeIn>
+          <Navigation mode={mode} modeChange={() => setMode(m => m === 'dark' ? 'light' : 'dark')}/>
+          <Main/>
+          <About/>
+          <Experience/>
+          <Timeline/>
+          <Project/>
+          <Awards/>
+          <Contact/>
           <Footer />
         </div>
     </div>

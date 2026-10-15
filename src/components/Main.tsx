@@ -1,13 +1,11 @@
 import React from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import DownloadIcon from '@mui/icons-material/Download';
+import Icon from './Icon';
 import '../assets/styles/Main.scss';
-import ProfileImage from '../assets/images/profile.png';
+import ProfileImage from '../assets/images/profile.webp';
 
 function Main() {
   return (
-    <section className="hero" id="home">
+    <section className="hero reveal" id="home">
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="hero-kicker">
@@ -26,15 +24,15 @@ function Main() {
               rel="noreferrer"
               download="Ali_Arman_Dai_Resume.pdf"
             >
-              <DownloadIcon fontSize="small" />
+              <Icon name="download" small />
               Download Resume
             </a>
             <a className="btn-ghost" href="https://github.com/armanalis" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <GitHubIcon fontSize="small" />
+              <Icon name="github" small />
               GitHub
             </a>
             <a className="btn-ghost" href="https://www.linkedin.com/in/ali-arman-dai/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <LinkedInIcon fontSize="small" />
+              <Icon name="linkedin" small />
               LinkedIn
             </a>
           </div>

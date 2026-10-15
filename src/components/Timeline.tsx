@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/styles/Timeline.scss'
+import '../assets/styles/Entries.scss';
 
 const education = [
   {
@@ -37,15 +37,15 @@ function Timeline() {
         <p className="section-lede">From METU in Türkiye to Politecnico di Torino — engineering foundations through to data science.</p>
       </div>
 
-      <ol className="edu-list">
+      <ol className="entry-list">
         {education.map((item) => (
-          <li key={item.index} className="edu-item glass-soft">
-            <div className="edu-meta">
-              <span className="edu-index">{item.index}</span>
-              <span className="edu-date">{item.date}</span>
-              <span className="edu-location">{item.location}</span>
+          <li key={item.index} className="entry-item glass-soft">
+            <div className="entry-meta">
+              <span className="entry-index">{item.index}</span>
+              <span className="entry-date">{item.date}</span>
+              <span className="entry-location">{item.location}</span>
             </div>
-            <div className="edu-body">
+            <div className="entry-body">
               <h3>{item.title}</h3>
               <h4>{item.school}</h4>
               <p>{item.body}</p>

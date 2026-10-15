@@ -13,7 +13,7 @@ function Awards() {
 
       <article className="award-panel glass-soft">
         <div className="award-media">
-          <img src={awardPhoto} alt="Receiving the Premio Leonardo 2026" />
+          <img src={awardPhoto} alt="Receiving the Premio Leonardo 2026" loading="lazy" />
         </div>
         <div className="award-copy">
           <p className="award-date">14 / 04 / 2026</p>

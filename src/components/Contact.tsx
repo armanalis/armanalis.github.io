@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/Contact.scss';
-import EmailIcon from '@mui/icons-material/Email';
+import Icon from './Icon';
 
 function Contact() {
   return (
@@ -17,7 +17,7 @@ function Contact() {
           armanalis1905@gmail.com
         </a>
         <a className="btn-primary contact-cta" href="mailto:armanalis1905@gmail.com">
-          <EmailIcon fontSize="small" />
+          <Icon name="email" small />
           Say Hello
         </a>
       </div>
