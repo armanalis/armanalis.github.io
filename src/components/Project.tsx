@@ -1,7 +1,6 @@
 import React from "react";
 import LeetCode from '../assets/images/LeetCode.webp';
 import UAVproject from '../assets/images/UAV.webp';
-import BudgetPlanner from '../assets/images/budget-planner.webp';
 import LanguageQuiz from '../assets/images/language-quiz.webp';
 import SemesterPlanner from '../assets/images/semester-planner.webp';
 import '../assets/styles/Project.scss';
@@ -24,15 +23,6 @@ const projects = [
     alt: "Semester Planner weekly calendar",
     title: "Semester Planner",
     body: "Weekly study planner for university students: drag-and-drop calendar, Markdown and LaTeX course notes, focus timer and statistics, with cross-device sync on Vercel and Redis via QR-code pairing.",
-  },
-  {
-    href: "https://github.com/armanalis/budget-planner",
-    live: "https://armanalis-budgetplanner.vercel.app/",
-    liveLabel: "Open Budget Planner",
-    img: BudgetPlanner,
-    alt: "Budget Planner",
-    title: "Personal Budget Planner",
-    body: "Track income, expenses, and savings goals with real-time breakdowns and monthly summaries in a clean, responsive interface.",
   },
   {
     href: "https://github.com/armanalis/opencv-gpu-tracker",
@@ -60,7 +50,7 @@ function Project() {
       <div className="section-head">
         <span className="section-index">04</span>
         <h1>Projects</h1>
-        <p className="section-lede">Selected work across AI-powered learning products, productivity and finance tools, and real-time systems.</p>
+        <p className="section-lede">Selected work across AI-powered learning products, productivity tools, and real-time systems.</p>
       </div>
 
       <div className="projects-grid">
