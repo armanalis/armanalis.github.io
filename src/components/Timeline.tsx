@@ -8,7 +8,7 @@ const education = [
     school: "Politecnico di Torino",
     date: "Sep 2026 — Present",
     location: "Torino, Italy",
-    body: "Master's studies focused on data science, machine learning, and engineering systems that turn data into decisions.",
+    body: "Master's studies focused on data science, machine learning, and engineering systems that turn data into decisions. Current courses: Data Science and Machine Learning Lab, Information Theory for Data Science, Computational Linear Algebra for Large-Scale Problems, Data Management and Visualization, Innovation Management.",
   },
   {
     index: "02",

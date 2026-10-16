@@ -3,16 +3,16 @@ import '../assets/styles/About.scss';
 
 const highlights = [
   {
-    title: "Data & Automation",
-    body: "Built Python/Streamlit pipelines at Pitti Immagine to clean and analyze 2M+ customer records — recognized with the Premio Leonardo 2026.",
+    title: "AI & LLM Integration",
+    body: "Integrated an LLM (gpt-oss-120b via the Groq API) into Italiarena to explain answers after each match and pre-check questions sent in by players.",
   },
   {
-    title: "Computer Vision & C++ Systems",
-    body: "Engineered real-time optical tracking pipelines using C++, OpenCV, and Kalman Filters, currently integrating YOLO models and GPU acceleration.",
+    title: "Data Pipelines",
+    body: "Built a memory-efficient Python/Streamlit pipeline at Pitti Immagine that processes 2.2M+ records (1.2 GB) under strict RAM limits — winner of the Comitato Leonardo Degree Award 2026.",
   },
   {
-    title: "Full-Stack & Web Systems",
-    body: "Built italiarena.com — a multiplayer language learning platform with live 1v1 matchmaking, real-time game state synchronization, and user performance analytics.",
+    title: "Full-Stack Web Apps",
+    body: "Built italiarena.com — live 1v1 trivia with real-time match sync on Supabase — and Semester Planner, a study planner with cross-device sync on Vercel and Redis.",
   },
   {
     title: "Leadership",
@@ -22,16 +22,32 @@ const highlights = [
 
 const stacks = [
   {
-    label: "Languages",
-    items: "C++, Python, SQL, TypeScript/JavaScript, C, Java",
+    label: "Programming languages",
+    items: "Python, SQL, TypeScript, C++, C, Java, MATLAB",
   },
   {
-    label: "Domains",
-    items: "AI, Data Analytics, Computer Vision, Real-Time Systems, Full-Stack Web Development",
+    label: "AI & Machine Learning",
+    items: "LLM APIs (Groq, gpt-oss-120b), Retrieval-Augmented Generation (RAG), embeddings, vector search, AutoML, Machine Learning",
   },
   {
-    label: "Tools",
-    items: "PostgreSQL, Streamlit, Docker, OpenCV, Linux, Git",
+    label: "Data & databases",
+    items: "PostgreSQL, MySQL, Supabase (Postgres, Auth, Realtime), Redis, Streamlit",
+  },
+  {
+    label: "Web & cloud",
+    items: "React, Next.js, Vercel, Tailwind CSS",
+  },
+  {
+    label: "Tools & platforms",
+    items: "Git, GitHub Actions, Docker, n8n, Linux, macOS",
+  },
+  {
+    label: "Advanced knowledge",
+    items: "Algorithms & data structures, OOP & SOLID design, networking (TCP/IP, UDP, OSI model)",
+  },
+  {
+    label: "Spoken languages",
+    items: "Turkish (native), English (full professional), Italian (limited working)",
   },
 ];
 
@@ -49,16 +65,16 @@ function About() {
       <div className="about-layout">
         <div className="about-intro glass-soft">
           <p>
-            I am an MSc Data Science &amp; Engineering student at Politecnico di Torino targeting roles in AI and Data Science. I focus on machine learning, real-time software systems, and automated data pipelines.
+            I am an MSc Data Science &amp; Engineering student at Politecnico di Torino with working knowledge of Retrieval-Augmented Generation (RAG), embeddings and vector search, plus experience with Large Language Model (LLM) applications, AutoML and Python data pipelines processing 2.2M+ records. I built and deployed two full-stack projects, one with an LLM integrated through the Groq API.
           </p>
           <p className="about-open">
             Open to connecting with AI researchers, data engineers, and tech leaders building next-gen data solutions.
           </p>
         </div>
 
-        <div className="about-block">
+        <div className="sub-block">
           <h3>Key Experience &amp; Projects</h3>
-          <ul className="about-highlights">
+          <ul className="card-grid">
             {highlights.map((item) => (
               <li key={item.title} className="glass-soft">
                 <h4>{item.title}</h4>
@@ -68,8 +84,8 @@ function About() {
           </ul>
         </div>
 
-        <div className="about-block">
-          <h3>Core Stack &amp; Skills</h3>
+        <div className="sub-block">
+          <h3>Skills &amp; Languages</h3>
           <ul className="about-stack">
             {stacks.map((stack) => (
               <li key={stack.label} className="glass-soft">

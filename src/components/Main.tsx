@@ -14,7 +14,7 @@ function Main() {
           <h1 className="hero-brand">Ali Arman Dai</h1>
           <p className="hero-role">Data Science &amp; Engineering</p>
           <p className="hero-lede">
-            Building software that solves real problems — with automation, AI, and systems that stay efficient under pressure.
+            Building software that solves real problems — with AI, machine learning, LLM and RAG applications.
           </p>
           <div className="hero-actions">
             <a

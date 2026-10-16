@@ -6,7 +6,7 @@ const experiences = [
     index: "01",
     title: "Data Analyst",
     company: "Pitti Immagine",
-    date: "Apr 2026 — Present",
+    date: "Apr 2026 — Jul 2026",
     location: "Hybrid — Italy",
     bullets: [
       "Architected B2B Analytics Dashboard: Built a memory-optimized Python/Streamlit pipeline to process 2.2M+ records (1.2GB) within strict RAM constraints.",
