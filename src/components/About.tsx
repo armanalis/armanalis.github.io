@@ -65,7 +65,7 @@ function About() {
       <div className="about-layout">
         <div className="about-intro glass-soft">
           <p>
-            I am an MSc Data Science &amp; Engineering student at Politecnico di Torino with working knowledge of Retrieval-Augmented Generation (RAG), embeddings and vector search, plus experience with Large Language Model (LLM) applications, AutoML and Python data pipelines processing 2.2M+ records. I built and deployed two full-stack projects, one with an LLM integrated through the Groq API.
+            I am an MSc Data Science &amp; Engineering student at Politecnico di Torino with working knowledge of Retrieval-Augmented Generation (RAG), embeddings and vector search, plus experience with Large Language Model (LLM) applications, AutoML and Python data pipelines processing 2.2M+ records. I have built and deployed full-stack projects, including one with an LLM integrated through the Groq API.
           </p>
           <p className="about-open">
             Open to connecting with AI researchers, data engineers, and tech leaders building next-gen data solutions.

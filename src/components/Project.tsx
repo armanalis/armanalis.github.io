@@ -1,4 +1,7 @@
 import React from "react";
+import LeetCode from '../assets/images/LeetCode.webp';
+import UAVproject from '../assets/images/UAV.webp';
+import BudgetPlanner from '../assets/images/budget-planner.webp';
 import LanguageQuiz from '../assets/images/language-quiz.webp';
 import SemesterPlanner from '../assets/images/semester-planner.webp';
 import '../assets/styles/Project.scss';
@@ -22,6 +25,33 @@ const projects = [
     title: "Semester Planner",
     body: "Weekly study planner for university students: drag-and-drop calendar, Markdown and LaTeX course notes, focus timer and statistics, with cross-device sync on Vercel and Redis via QR-code pairing.",
   },
+  {
+    href: "https://github.com/armanalis/budget-planner",
+    live: "https://armanalis-budgetplanner.vercel.app/",
+    liveLabel: "Open Budget Planner",
+    img: BudgetPlanner,
+    alt: "Budget Planner",
+    title: "Personal Budget Planner",
+    body: "Track income, expenses, and savings goals with real-time breakdowns and monthly summaries in a clean, responsive interface.",
+  },
+  {
+    href: "https://github.com/armanalis/opencv-gpu-tracker",
+    live: null,
+    liveLabel: null,
+    img: UAVproject,
+    alt: "UAV tracking project",
+    title: "Autonomous UAV Optical Tracking",
+    body: "Real-time C++ tracking resilient to lighting and occlusion — CLAHE, HSV masking, Kalman filtering, with YOLO, UDP telemetry, and Metal GPU acceleration in progress.",
+  },
+  {
+    href: "https://github.com/armanalis/LeetCode",
+    live: null,
+    liveLabel: null,
+    img: LeetCode,
+    alt: "LeetCode practice",
+    title: "Daily LeetCode Challenge",
+    body: "A daily practice rhythm — at least one LeetCode problem every day to sharpen problem-solving.",
+  },
 ];
 
 function Project() {
@@ -30,7 +60,7 @@ function Project() {
       <div className="section-head">
         <span className="section-index">04</span>
         <h1>Projects</h1>
-        <p className="section-lede">Selected work: an AI-powered language game and a study planner, both built and deployed full-stack.</p>
+        <p className="section-lede">Selected work across AI-powered learning products, productivity and finance tools, and real-time systems.</p>
       </div>
 
       <div className="projects-grid">
