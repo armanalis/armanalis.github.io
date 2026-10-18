@@ -56,11 +56,11 @@ function Project() {
       <div className="projects-grid">
         {projects.map((project) => (
           <article key={project.title} className="project glass-soft">
-            <a href={project.href} target="_blank" rel="noreferrer" className="project-media">
+            <a href={project.live || project.href} target="_blank" rel="noreferrer" className="project-media">
               <img src={project.img} alt={project.alt} loading="lazy" />
             </a>
             <div className="project-body">
-              <a href={project.href} target="_blank" rel="noreferrer">
+              <a href={project.live || project.href} target="_blank" rel="noreferrer">
                 <h2>{project.title}</h2>
               </a>
               <p>{project.body}</p>
