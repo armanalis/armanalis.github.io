@@ -1,53 +1,55 @@
 import React from "react";
+import Icon, { IconName } from './Icon';
 import '../assets/styles/About.scss';
 
 const highlights = [
   {
     title: "AI & LLM Integration",
-    body: "Integrated an LLM (gpt-oss-120b via the Groq API) into Italiarena to explain answers after each match and pre-check questions sent in by players.",
+    body: "An LLM in Italiarena explains answers after every match.",
   },
   {
     title: "Data Pipelines",
-    body: "Built a memory-efficient Python/Streamlit pipeline at Pitti Immagine that processes 2.2M+ records (1.2 GB) under strict RAM limits — winner of the Comitato Leonardo Degree Award 2026.",
+    body: "Award-winning pipeline for 2.2M+ records at Pitti Immagine.",
   },
   {
     title: "Full-Stack Web Apps",
-    body: "Built italiarena.com — live 1v1 trivia with real-time match sync on Supabase — and Semester Planner, a study planner with cross-device sync on Vercel and Redis.",
+    body: "Built and deployed Italiarena and Semester Planner end to end.",
   },
   {
     title: "Leadership",
-    body: "Serve as a Reply Student Ambassador, driving hackathons and tech initiatives for 200+ students.",
+    body: "Reply Student Ambassador: 8+ events for 200+ students.",
   },
 ];
 
-const stacks = [
+// Chip text is Title Case; brand names keep their official spelling (n8n, macOS, gpt-oss-120b).
+const stacks: { label: string; items: [string, IconName?][] }[] = [
   {
-    label: "Programming languages",
-    items: "Python, SQL, TypeScript, C++, C, Java, MATLAB",
+    label: "Programming Languages",
+    items: [["Python", "python"], ["SQL"], ["TypeScript", "typescript"], ["C++", "cplusplus"], ["C", "c"], ["Java", "java"], ["MATLAB"]],
   },
   {
     label: "AI & Machine Learning",
-    items: "LLM APIs (Groq, gpt-oss-120b), Retrieval-Augmented Generation (RAG), embeddings, vector search, AutoML, Machine Learning",
+    items: [["LLM APIs (Groq, gpt-oss-120b)"], ["RAG"], ["Embeddings"], ["Vector Search"], ["AutoML"], ["Machine Learning"]],
   },
   {
-    label: "Data & databases",
-    items: "PostgreSQL, MySQL, Supabase (Postgres, Auth, Realtime), Redis, Streamlit",
+    label: "Data & Databases",
+    items: [["PostgreSQL", "postgresql"], ["MySQL", "mysql"], ["Supabase", "supabase"], ["Redis", "redis"], ["Streamlit", "streamlit"]],
   },
   {
-    label: "Web & cloud",
-    items: "React, Next.js, Vercel, Tailwind CSS",
+    label: "Web & Cloud",
+    items: [["React", "react"], ["Next.js", "nextjs"], ["Vercel", "vercel"], ["Tailwind CSS", "tailwind"]],
   },
   {
-    label: "Tools & platforms",
-    items: "Git, GitHub Actions, Docker, n8n, Linux, macOS",
+    label: "Tools & Platforms",
+    items: [["Git", "git"], ["GitHub Actions", "githubActions"], ["Docker", "docker"], ["n8n", "n8n"], ["Linux", "linux"], ["macOS", "apple"]],
   },
   {
-    label: "Advanced knowledge",
-    items: "Algorithms & data structures, OOP & SOLID design, networking (TCP/IP, UDP, OSI model)",
+    label: "Advanced Knowledge",
+    items: [["Algorithms & Data Structures"], ["OOP & SOLID Design"], ["Networking (TCP/IP, UDP, OSI)"]],
   },
   {
-    label: "Spoken languages",
-    items: "Turkish (native), English (full professional), Italian (limited working)",
+    label: "Spoken Languages",
+    items: [["Turkish · Native"], ["English · Full Professional"], ["Italian · Limited Working"]],
   },
 ];
 
@@ -58,14 +60,14 @@ function About() {
         <span className="section-index">01</span>
         <h1>About</h1>
         <p className="section-lede">
-          MSc Data Science &amp; Engineering at Politecnico di Torino — targeting roles in AI and Data Science.
+          MSc Data Science &amp; Engineering at Politecnico di Torino — targeting AI and data science roles.
         </p>
       </div>
 
       <div className="about-layout">
         <div className="about-intro glass-soft">
           <p>
-            I am an MSc Data Science &amp; Engineering student at Politecnico di Torino with working knowledge of Retrieval-Augmented Generation (RAG), embeddings and vector search, plus experience with Large Language Model (LLM) applications, AutoML and Python data pipelines processing 2.2M+ records. I have built and deployed full-stack projects, including one with an LLM integrated through the Groq API.
+            I'm an MSc Data Science &amp; Engineering student at Politecnico di Torino with hands-on experience in LLM applications, AutoML and Python data pipelines (2.2M+ records), plus working knowledge of retrieval-augmented generation (RAG) and vector search.
           </p>
           <p className="about-open">
             Open to connecting with AI researchers, data engineers, and tech leaders building next-gen data solutions.
@@ -90,7 +92,14 @@ function About() {
             {stacks.map((stack) => (
               <li key={stack.label} className="glass-soft">
                 <span className="stack-label">{stack.label}</span>
-                <span className="stack-items">{stack.items}</span>
+                <ul className="chip-list">
+                  {stack.items.map(([name, logo]) => (
+                    <li key={name} className="chip">
+                      {logo && <Icon name={logo} />}
+                      {name}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

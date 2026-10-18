@@ -4,7 +4,7 @@ import '../assets/styles/Entries.scss';
 const education = [
   {
     index: "01",
-    title: "MSc Data Science and Engineering",
+    title: "MSc Data Science & Engineering",
     school: "Politecnico di Torino",
     date: "Sep 2026 — Present",
     location: "Torino, Italy",
@@ -12,15 +12,15 @@ const education = [
   },
   {
     index: "02",
-    title: "B.S. Computer Engineering",
+    title: "BSc Computer Engineering",
     school: "Politecnico di Torino",
-    date: "2022 — Jul 2026",
+    date: "2022 — 2026",
     location: "Torino, Italy",
     body: "Graduated with a Bachelor's in Computer Engineering after transferring from Middle East Technical University. Built a foundation in computer science, programming, and software development.",
   },
   {
     index: "03",
-    title: "B.S. Computer Engineering (Transferred)",
+    title: "BSc Computer Engineering (Transferred)",
     school: "Middle East Technical University",
     date: "2020 — 2022",
     location: "Türkiye",

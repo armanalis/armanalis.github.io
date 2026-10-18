@@ -11,7 +11,7 @@ const projects = [
     live: "https://italiarena.com",
     liveLabel: "Open Italiarena",
     img: LanguageQuiz,
-    alt: "Language Quiz",
+    alt: "Italiarena quiz game",
     title: "Italiarena",
     body: "Live 1v1 Italian trivia where an LLM (gpt-oss-120b via the Groq API) explains answers after each match and pre-checks questions sent in by players. Level-based matchmaking (CEFR A1–C1), bot opponents and server-side scoring on Supabase keep every match fair.",
   },

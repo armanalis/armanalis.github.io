@@ -9,7 +9,7 @@ const experiences = [
     date: "Apr 2026 — Jul 2026",
     location: "Hybrid — Italy",
     bullets: [
-      "Architected B2B Analytics Dashboard: Built a memory-optimized Python/Streamlit pipeline to process 2.2M+ records (1.2GB) within strict RAM constraints.",
+      "Architected B2B Analytics Dashboard: Built a memory-optimized Python/Streamlit pipeline to process 2.2M+ records (1.2 GB) within strict RAM constraints.",
       "Engineered Unique-User Tracking: Replaced legacy frameworks with a deduplicated behavioral tracking system for accurate ROI analytics and funnel insights.",
       "Optimized Pipeline Stability: Developed type-aware validation filters to resolve stream-processing bottlenecks and ensure error-free data segmentation.",
       "Automated Cleansing & Lifecycle Metrics: Created a Customer Journey Matrix to map user state transitions and automated the isolation of delivery failures for database optimization.",
@@ -21,7 +21,7 @@ const experiences = [
     company: "Reply",
     date: "May 2024 — Present",
     location: "Torino, Italy",
-    body: "Organized and promoted 8+ key initiatives (hackathons, coding challenges, career events) at Politecnico di Torino, driving engagement from over 200+ student participants.",
+    body: "Organized and promoted 8+ key initiatives (hackathons, coding challenges, career events) at Politecnico di Torino, engaging 200+ students.",
   },
 ];
 

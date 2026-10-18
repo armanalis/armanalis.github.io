@@ -8,7 +8,7 @@
   --mist: #eef6f4;
   --paper: #f7fbfa;
   --text: #e8f4f1;
-  --text-muted: rgba(232, 244, 241, 0.68);
+  --text-muted: rgba(232, 244, 241, 0.9);
   --accent: #2ec4b6;
   --accent-2: #5eead4;
   --accent-warm: #f0b429;
@@ -337,6 +337,35 @@ h1, h2, h3, h4, h5 {
   transform: translateY(-2px);
   filter: brightness(1.05);
   color: #04201c !important;
+  box-shadow: 0 14px 36px rgba(46, 196, 182, 0.35);
+}
+
+/* Two joined primary buttons (View CV | download) that lift together. */
+.btn-split {
+  display: inline-flex;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(46, 196, 182, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  .btn-primary {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .btn-primary:first-child {
+    border-radius: 10px 0 0 10px;
+    border-right: 0;
+  }
+
+  .btn-primary:last-child {
+    border-radius: 0 10px 10px 0;
+    border-left: 1px solid rgba(4, 32, 28, 0.25);
+    padding-inline: 0.95rem;
+  }
+}
+
+.btn-split:hover {
+  transform: translateY(-2px);
   box-shadow: 0 14px 36px rgba(46, 196, 182, 0.35);
 }
 
