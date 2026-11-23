@@ -3,8 +3,6 @@ import italiarena from "./posts/italiarena";
 import semesterPlanner from "./posts/semester-planner";
 import checkUpdates from "./posts/check-updates";
 import dockDividers from "./posts/dock-dividers";
-import uavTracking from "./posts/uav-tracking";
-import leetcode from "./posts/leetcode";
 
 // New post: add a file in ./posts named <slug>.tsx and list it here.
 export const posts: Post[] = [
@@ -12,8 +10,6 @@ export const posts: Post[] = [
   semesterPlanner,
   checkUpdates,
   dockDividers,
-  uavTracking,
-  leetcode,
 ].sort((a, b) => b.date.localeCompare(a.date));
 
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);

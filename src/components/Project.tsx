@@ -50,7 +50,6 @@ const projects = [
     body: "Native-looking divider lines anywhere in the macOS Dock, so apps can be grouped. Uses Apple's own spacer tiles, the Accessibility API and a click-through overlay that matches light and dark mode.",
   },
   {
-    slug: "uav-tracking",
     href: "https://github.com/armanalis/opencv-gpu-tracker",
     live: null,
     liveLabel: null,
@@ -60,7 +59,6 @@ const projects = [
     body: "Real-time C++ tracking resilient to lighting and occlusion — CLAHE, HSV masking, Kalman filtering, with YOLO, UDP telemetry, and Metal GPU acceleration in progress.",
   },
   {
-    slug: "leetcode",
     href: "https://github.com/armanalis/LeetCode",
     live: null,
     liveLabel: null,
@@ -81,20 +79,27 @@ function Project() {
       </div>
 
       <div className="projects-grid">
-        {projects.map((project) => (
+        {projects.map((project) => {
+          // Projects without a blog post link straight to their site or GitHub, in a new tab.
+          const link = project.slug
+            ? { href: postUrl(project.slug) }
+            : { href: project.live || project.href, target: "_blank", rel: "noreferrer" };
+          return (
           <article key={project.title} className="project glass-soft">
-            <a href={postUrl(project.slug)} className="project-media">
+            <a {...link} className="project-media">
               <img src={project.img} alt={project.alt} loading="lazy" />
             </a>
             <div className="project-body">
-              <a href={postUrl(project.slug)}>
+              <a {...link}>
                 <h2>{project.title}</h2>
               </a>
               <p>{project.body}</p>
               <div className="project-links">
-                <a className="project-link" href={postUrl(project.slug)}>
-                  Read more
-                </a>
+                {project.slug && (
+                  <a className="project-link" href={postUrl(project.slug)}>
+                    Read more
+                  </a>
+                )}
                 <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
                   GitHub
                 </a>
@@ -106,7 +111,8 @@ function Project() {
               </div>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
