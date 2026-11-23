@@ -3,10 +3,8 @@ import Icon from "./Icon";
 
 export const navItems = [
   ['About', 'about'],
-  ['Experience', 'experience'],
-  ['Education', 'education'],
   ['Projects', 'projects'],
-  ['Awards', 'awards'],
+  ['Blog', 'blog'],
   ['Contact', 'contact']
 ];
 
@@ -27,8 +25,12 @@ function Navigation({ mode, modeChange }: Props) {
   }, []);
 
   // No behavior option: html { scroll-behavior } decides, so reduced motion is respected.
+  // On the blog pages the sections don't exist: Blog goes to /blog, the rest back to the home page.
   const scrollToSection = (section: string) => {
-    document.getElementById(section)?.scrollIntoView();
+    const target = document.getElementById(section);
+    if (target) target.scrollIntoView();
+    else if (section === 'blog') window.location.href = '/blog';
+    else window.location.href = section === 'home' ? '/' : `/#${section}`;
   };
 
   const openDrawer = () => {

@@ -3,10 +3,14 @@ import LeetCode from '../assets/images/LeetCode.webp';
 import UAVproject from '../assets/images/UAV.webp';
 import LanguageQuiz from '../assets/images/language-quiz.webp';
 import SemesterPlanner from '../assets/images/semester-planner.webp';
+import CheckUpdates from '../assets/images/check-updates.webp';
+import DockDividers from '../assets/images/dock-dividers.webp';
+import { postUrl } from '../content';
 import '../assets/styles/Project.scss';
 
 const projects = [
   {
+    slug: "italiarena",
     href: "https://github.com/armanalis/italiarena",
     live: "https://italiarena.com",
     liveLabel: "Open Italiarena",
@@ -16,6 +20,7 @@ const projects = [
     body: "Live 1v1 Italian trivia where an LLM (gpt-oss-120b via the Groq API) explains answers after each match and pre-checks questions sent in by players. Level-based matchmaking (CEFR A1–C1), bot opponents and server-side scoring on Supabase keep every match fair.",
   },
   {
+    slug: "semester-planner",
     href: "https://github.com/armanalis/semester-planner",
     live: "https://semester-planner-five.vercel.app/",
     liveLabel: "Open Semester Planner",
@@ -25,6 +30,27 @@ const projects = [
     body: "Weekly study planner for university students: drag-and-drop calendar, Markdown and LaTeX course notes, focus timer and statistics, with cross-device sync on Vercel and Redis via QR-code pairing.",
   },
   {
+    slug: "check-updates",
+    href: "https://github.com/armanalis/check-updates",
+    live: "https://check-updates.armanalis.workers.dev",
+    liveLabel: "Download",
+    img: CheckUpdates,
+    alt: "Check Updates app window listing apps and their versions",
+    title: "Check Updates",
+    body: "Checks every app on a Mac or Windows PC for updates and updates them with one click. Combines the App Store, Homebrew and each app's own update feed on Mac, and winget on Windows. Swift/SwiftUI and C#.",
+  },
+  {
+    slug: "dock-dividers",
+    href: "https://github.com/armanalis/dock-dividers",
+    live: "https://dock-dividers.armanalis.workers.dev",
+    liveLabel: "Download",
+    img: DockDividers,
+    alt: "macOS Dock with a divider line between app groups",
+    title: "Dock Dividers",
+    body: "Native-looking divider lines anywhere in the macOS Dock, so apps can be grouped. Uses Apple's own spacer tiles, the Accessibility API and a click-through overlay that matches light and dark mode.",
+  },
+  {
+    slug: "uav-tracking",
     href: "https://github.com/armanalis/opencv-gpu-tracker",
     live: null,
     liveLabel: null,
@@ -34,6 +60,7 @@ const projects = [
     body: "Real-time C++ tracking resilient to lighting and occlusion — CLAHE, HSV masking, Kalman filtering, with YOLO, UDP telemetry, and Metal GPU acceleration in progress.",
   },
   {
+    slug: "leetcode",
     href: "https://github.com/armanalis/LeetCode",
     live: null,
     liveLabel: null,
@@ -56,15 +83,18 @@ function Project() {
       <div className="projects-grid">
         {projects.map((project) => (
           <article key={project.title} className="project glass-soft">
-            <a href={project.live || project.href} target="_blank" rel="noreferrer" className="project-media">
+            <a href={postUrl(project.slug)} className="project-media">
               <img src={project.img} alt={project.alt} loading="lazy" />
             </a>
             <div className="project-body">
-              <a href={project.live || project.href} target="_blank" rel="noreferrer">
+              <a href={postUrl(project.slug)}>
                 <h2>{project.title}</h2>
               </a>
               <p>{project.body}</p>
               <div className="project-links">
+                <a className="project-link" href={postUrl(project.slug)}>
+                  Read more
+                </a>
                 <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
                   GitHub
                 </a>

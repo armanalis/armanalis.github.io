@@ -21,7 +21,7 @@ function Awards() {
   return (
     <section className="section awards-section reveal" id="awards">
       <div className="section-head">
-        <span className="section-index">05</span>
+        <span className="section-index">06</span>
         <h2>Awards &amp; Certifications</h2>
         <p className="section-lede">Recognition for applied data work in industry, plus certifications in machine learning, algorithms, and professional skills.</p>
       </div>
