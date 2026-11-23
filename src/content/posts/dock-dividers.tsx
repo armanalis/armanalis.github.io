@@ -50,13 +50,13 @@ const post: Post = {
         </li>
       </ol>
       <p>
-        While a window is open it behaves like a normal app; close it and only a menu bar icon stays. Settings
-        has language (English / Türkçe), Open at Login and the Accessibility status.
+        It works with the Dock at the bottom, left or right; on a side Dock the lines are horizontal. While a
+        window is open it behaves like a normal app; close it and only a menu bar icon stays. Settings has
+        language (English / Türkçe), Open at Login, Keep Lines After Quitting and the Accessibility status.
       </p>
 
       <h2>Limits</h2>
       <ul>
-        <li>Bottom Dock only; a left or right Dock is not supported.</li>
         <li>Lines follow the Dock 3 times per second, so they lag behind Dock magnification.</li>
       </ul>
 
