@@ -1,12 +1,13 @@
 import React from "react";
 import type { Post } from "../types";
 import cover from "../../assets/images/semester-planner.webp";
+import coursePage from "../../assets/images/semester-planner-course.webp";
 
 const post: Post = {
   slug: "semester-planner",
   title: "Semester Planner",
   date: "2026-10-04",
-  summary: "A weekly study planner for university students: timetable, study blocks, course notes, focus timer and sync between phone and laptop.",
+  summary: "I kept getting lost in Polito's calendar, so I built a planner for lectures, course notes, study blocks and focus time.",
   tags: ["React", "TypeScript", "Vite", "Vercel", "Redis", "OCR"],
   cover,
   coverAlt: "Semester Planner weekly calendar",
@@ -15,42 +16,50 @@ const post: Post = {
   liveLabel: "Open Semester Planner",
   body: (
     <>
-      <h2>Why I built it</h2>
       <p>
-        I built it for my Data Science MSc at Politecnico di Torino. My timetable, to-dos, notes and study plan
-        lived in different places, and none of them knew about the others. I wanted one place that shows the week:
-        my classes, when I'll study, and what's left for each course. It works for any program.
+        I made this app because of a problem I've had since I joined Politecnico di Torino in 2022. Me and lots
+        of my friends have suffered from the same issue: it's really easy to get lost in Polito's calendar.
+      </p>
+      <p>
+        The job of this app is to make following lectures easier and to keep notes for each course. Every course
+        has its own page where you can add the exam date and some more information about the course, and, most
+        importantly (probably), take notes during and after the lecture.
+      </p>
+      <figure>
+        <img
+          src={coursePage}
+          alt="Course page for Information Theory for Data Science with exam date, to-dos, a project, study blocks and timetable"
+          loading="lazy"
+        />
+        <figcaption>One of my course pages.</figcaption>
+      </figure>
+      <p>
+        You can see your weekly calendar with your courses, remove the ones you don't need, and add your
+        meetings, activities, or even study blocks where you will study for that course (for sure!!!). You can
+        also sync your devices with each other; I use it on both my phone and my laptop.
+      </p>
+      <p>
+        I also added a focus timer. The default is pomodoro (I mostly use 50-10), and there are some statistics
+        for fun: how many hours you studied, your streaks, how many to-dos you finished and so on.
       </p>
 
-      <h2>How it solves it</h2>
+      <h2>A few more things</h2>
       <ul>
         <li>
-          <strong>Week planner:</strong> your timetable plus study blocks. Drag to plan, move or resize a block.
-          Skip a class this week and it adds a catch-up to-do.
+          You don't have to type your timetable in. Upload a screenshot of your weekly schedule and it turns into
+          your classes. It's read right in your browser, for free, and nothing is sent anywhere.
         </li>
+        <li>If you skip a class, it adds a catch-up to-do so you don't forget to make up for it.</li>
+        <li>Notes support Markdown and LaTeX, so formulas actually look like formulas.</li>
+        <li>There's a weekly review page to look back at how the week went.</li>
         <li>
-          <strong>Course pages:</strong> to-dos, projects with steps, notes with Markdown and LaTeX, topics with
-          review reminders, links.
+          Your data stays in your browser, and there's a Backup button if you want a copy. English and Turkish,
+          light and dark mode.
         </li>
-        <li>
-          <strong>Focus timer</strong>, a <strong>weekly review</strong> and <strong>statistics</strong>.
-        </li>
-        <li>
-          <strong>Onboarding from a screenshot:</strong> upload a picture of your weekly timetable and it becomes
-          your classes.
-        </li>
-        <li>English and Turkish, light and dark.</li>
       </ul>
-
-      <h2>How it works</h2>
       <p>
-        Data lives in the browser (localStorage), with a one-click backup. Timetable screenshots are read entirely
-        in the browser: pixel analysis finds the colored class blocks and Tesseract (open-source OCR) reads the
-        days, times and course names. No API key, no server.
-      </p>
-      <p>
-        Sync uses a private 8-character code: create it on the laptop, scan the QR code with your phone. Synced
-        data goes through a Vercel Function backed by Upstash Redis.
+        I built it around my Data Science and Engineering program, but it works for any program. If you're at
+        Polito too, give it a try.
       </p>
     </>
   ),
