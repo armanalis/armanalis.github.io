@@ -14,6 +14,7 @@ import AuroraBackground from './components/AuroraBackground';
 import Blog from './components/Blog';
 import BlogPreview from './components/BlogPreview';
 import PostPage from './components/PostPage';
+import BlogNav from './components/BlogNav';
 import { postBySlug } from './content';
 
 // Pages are plain URLs (/blog, /blog/<slug>, /<slug>); links are full page loads.
@@ -29,6 +30,7 @@ function currentPage() {
 function App() {
     const [mode, setMode] = useState<'dark' | 'light'>('dark');
     const [page] = useState(currentPage);
+    const toggleMode = () => setMode(m => m === 'dark' ? 'light' : 'dark');
 
     useEffect(() => {
         if (page.kind === 'post') document.title = `${page.post.title} | Ali Arman Dai`;
@@ -60,7 +62,11 @@ function App() {
     <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
         <AuroraBackground />
         <div className="site-content">
-          <Navigation mode={mode} modeChange={() => setMode(m => m === 'dark' ? 'light' : 'dark')}/>
+          {page.kind === 'home' ? (
+            <Navigation mode={mode} modeChange={toggleMode}/>
+          ) : (
+            <BlogNav mode={mode} modeChange={toggleMode} showProgress={page.kind === 'post'}/>
+          )}
           {page.kind === 'home' && (
             <>
               <Main/>

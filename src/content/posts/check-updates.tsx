@@ -65,6 +65,63 @@ const post: Post = {
       </pre>
     </>
   ),
+  tr: {
+    summary: "Mac'indeki ya da Windows bilgisayarındaki her uygulamanın güncellemesini kontrol eder ve tek tıkla günceller. Ücretsiz.",
+    liveLabel: "Check Updates'i indir",
+    body: (
+      <>
+        <h2>Neden yaptım</h2>
+        <p>
+          Her uygulama kendi yöntemiyle güncelleniyor. Bazıları App Store'dan geliyor, bazılarının kendi
+          güncelleyicisi var, bazıları sadece açınca güncelleniyor, bazıları da hiç haber vermiyor. Bilgisayarı güncel
+          tutmak, uygulamaları tek tek açıp her birinde "Güncellemeleri Kontrol Et"e basmak demekti. Tek bir soruyu
+          cevaplayan tek bir pencere istedim: ne güncel değil ve tek tıkla düzeltebilir miyim?
+        </p>
+
+        <h2>Sorunu nasıl çözüyor</h2>
+        <p>
+          Check Updates yüklü her uygulamayı, yüklü ve en son sürümüyle birlikte listeliyor.{" "}
+          <strong>Hepsini Güncelle</strong> her şeyi güncelliyor, istersen tek tek de güncelleyebiliyorsun. Bir
+          güncelleme başarısız olursa nedenini söylüyor ve bir düzeltme butonu sunuyor. Şifre isteyen uygulamalar
+          sessizce başarısız olmak yerine şifreyi hemen soruyor.
+        </p>
+        <figure>
+          <img src={settings} alt="Ayarlar penceresi: App Store ya da web uygulamaları, dil ve hangi uygulamaların kontrol edileceği" loading="lazy" />
+          <figcaption>Neyin kontrol edileceğini seç, umursamadığın uygulamaları gizle. İngilizce ve Türkçe.</figcaption>
+        </figure>
+
+        <h2>Nasıl çalışıyor</h2>
+        <ul>
+          <li>
+            <strong>Mac:</strong> en son sürümler App Store'dan, Homebrew cask kataloğundan ve uygulamanın kendi
+            güncelleme kaynağından (Sparkle ya da electron-builder'ın <code>app-update.yml</code> dosyası) geliyor. En
+            yeni cevap kazanıyor. Güncellemeler <code>brew</code>, App Store ya da uygulamanın kendi güncelleyicisiyle
+            yapılıyor. Swift ve SwiftUI ile yazıldı.
+          </li>
+          <li>
+            <strong>Windows:</strong> Windows'un yerleşik paket yöneticisi <code>winget</code>'i kullanıyor; bu da
+            winget kataloğunu ve Microsoft Store'u kapsıyor. Sadece gerektiğinde UAC ile yönetici olarak çalışıyor. C#
+            (WinForms) ve .NET Framework 4.8 ile yazıldı, yani 60 KB'lık <code>.exe</code> hiçbir şey kurmadan
+            çalışıyor.
+          </li>
+        </ul>
+        <p>
+          Sürüm sorguları dışında hiçbir şey hiçbir yere gönderilmiyor: Mac'te Apple'a, Homebrew'a ve uygulamaların
+          kendi kaynaklarına; Windows'ta winget üzerinden Microsoft'un kataloglarına.
+        </p>
+
+        <h2>Dene</h2>
+        <p>Mac (macOS 13+), Terminal'de:</p>
+        <pre>
+          <code>curl -fsSL https://check-updates.armanalis.workers.dev/install.sh | sh</code>
+        </pre>
+        <p>Windows 10 ve 11, PowerShell'de (yönetici gerekmez):</p>
+        <pre>
+          <code>irm https://check-updates.armanalis.workers.dev/install.ps1 | iex</code>
+        </pre>
+      </>
+    ),
+  },
 };
 
 export default post;

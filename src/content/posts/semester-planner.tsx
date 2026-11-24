@@ -63,6 +63,60 @@ const post: Post = {
       </p>
     </>
   ),
+  tr: {
+    summary: "Polito'nun takviminde sürekli kayboluyordum, o yüzden dersler, ders notları, çalışma blokları ve odak süresi için bir planlayıcı yaptım.",
+    liveLabel: "Semester Planner'ı aç",
+    body: (
+      <>
+        <p>
+          Bu uygulamayı, 2022'de Politecnico di Torino'ya başladığımdan beri yaşadığım bir problem yüzünden yaptım.
+          Ben ve birçok arkadaşım aynı şeyi yaşadık: Polito'nun takviminde kaybolmak çok kolay.
+        </p>
+        <p>
+          Bu uygulamanın işi, dersleri takip etmeyi kolaylaştırmak ve her ders için not tutmak. Her dersin kendi
+          sayfası var: sınav tarihini ve dersle ilgili diğer bilgileri ekleyebiliyorsun ve belki de en önemlisi,
+          ders sırasında ve sonrasında o derse dair not alabiliyorsun.
+        </p>
+        <figure>
+          <img
+            src={coursePage}
+            alt="Information Theory for Data Science ders sayfası: sınav tarihi, yapılacaklar, proje, çalışma blokları ve ders programı"
+            loading="lazy"
+          />
+          <figcaption>Ders sayfalarımdan biri.</figcaption>
+        </figure>
+        <p>
+          Haftalık takvimini derslerinle birlikte görebiliyorsun; ihtiyacın olmayanları silip toplantılarını,
+          aktivitelerini, hatta o ders için çalışacağın çalışma bloklarını ekleyebiliyorsun (kesin çalışacaksın!!!).
+          Birden fazla cihazını birbiriyle senkronize de edebiliyorsun; ben hem telefonda hem bilgisayarda
+          kullanıyorum.
+        </p>
+        <p>
+          Bir de odak sayacı ekledim. Varsayılanı pomodoro (ben genelde 50-10 kullanıyorum) ve eğlencesine birkaç
+          istatistik var: kaç saat çalıştığın, serilerin, kaç yapılacak bitirdiğin falan.
+        </p>
+
+        <h2>Birkaç şey daha</h2>
+        <ul>
+          <li>
+            Ders programını elle yazmana gerek yok. Haftalık programının ekran görüntüsünü yükle, derslerine
+            dönüşsün. Görüntü tarayıcında okunuyor, ücretsiz ve hiçbir yere gönderilmiyor.
+          </li>
+          <li>Bir dersi atlarsan, unutmaman için telafi diye bir yapılacak ekliyor.</li>
+          <li>Notlar Markdown ve LaTeX destekliyor, yani formüller gerçekten formül gibi görünüyor.</li>
+          <li>Haftanın nasıl geçtiğine bakmak için haftalık değerlendirme sayfası var.</li>
+          <li>
+            Verilerin tarayıcında kalıyor, kopya istersen Yedekle butonu var. İngilizce ve Türkçe, açık ve koyu
+            tema.
+          </li>
+        </ul>
+        <p>
+          Kendi Data Science and Engineering programıma göre yaptım ama her programla çalışıyor. Sen de
+          Polito'daysan bir dene.
+        </p>
+      </>
+    ),
+  },
 };
 
 export default post;

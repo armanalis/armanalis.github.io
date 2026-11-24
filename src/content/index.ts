@@ -1,4 +1,4 @@
-import type { Post } from "./types";
+import type { Lang, Post } from "./types";
 import italiarena from "./posts/italiarena";
 import semesterPlanner from "./posts/semester-planner";
 import checkUpdates from "./posts/check-updates";
@@ -16,11 +16,11 @@ export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 
 export const postUrl = (slug: string) => `/blog/${slug}`;
 
-export const formatDate = (iso: string) =>
-  new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", {
+export const formatDate = (iso: string, lang: Lang = "en") =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
 
-export type { Post };
+export type { Lang, Post };

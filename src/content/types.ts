@@ -15,4 +15,12 @@ export type Post = {
   live?: string;
   liveLabel?: string;
   body: ReactNode;
+  /** Turkish version, shown with the flag switch on the post page. */
+  tr?: {
+    summary: string;
+    liveLabel?: string;
+    body: ReactNode;
+  };
 };
+
+export type Lang = "en" | "tr";

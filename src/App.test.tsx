@@ -28,3 +28,12 @@ test.each(['/blog', ...posts.flatMap((p) => [`/blog/${p.slug}`, `/${p.slug}`])])
   expect(getAllByRole('heading', { level: 1 })[0]).toHaveTextContent(post ? post.title : 'Blog');
   window.history.pushState({}, '', '/');
 });
+
+test.each(posts.filter((p) => p.tr).map((p) => p.slug))('%s shows its Turkish version with ?lang=tr', (slug) => {
+  const post = posts.find((p) => p.slug === slug)!;
+  window.history.pushState({}, '', `/blog/${slug}?lang=tr`);
+  const { getByText } = render(<App />);
+  expect(getByText(post.tr!.summary)).toBeInTheDocument();
+  window.history.pushState({}, '', '/');
+  window.localStorage.clear();
+});

@@ -71,6 +71,68 @@ const post: Post = {
       </p>
     </>
   ),
+  tr: {
+    summary: "macOS Dock'un istediğin yerine native görünümlü ayraç çizgileri koyan küçük bir uygulama; uygulamalarını gruplayabilirsin.",
+    liveLabel: "Dock Dividers'ı indir",
+    body: (
+      <>
+        <h2>Neden yaptım</h2>
+        <p>
+          Dock'um sürekli büyüyordu: tarayıcılar, mesajlaşma uygulamaları, editörler ve sistem araçları hep tek uzun
+          bir sırada duruyordu. macOS tam olarak bir ayraç çiziyor (Çöp Sepeti'nden önce) ve kendi ayracını eklemenin
+          bir yolunu vermiyor; yani bir uygulamayı bulmak her seferinde bütün Dock'u taramak demekti. Uygulamaları
+          kafamda düşündüğüm gibi gruplamak istedim, her grup arasında temiz bir çizgiyle ve o çizgi yama gibi
+          durmadan.
+        </p>
+
+        <h2>Sorunu nasıl çözüyor</h2>
+        <p>
+          Uygulamayı açıyorsun, basit bir listede bir ayracı istediğin iki uygulamanın arasına sürüklüyorsun ve{" "}
+          <strong>Dock'a Uygula</strong>'ya basıyorsun. Dock'ta Apple'ın kendi ayracına birebir benzeyen, açık ve koyu
+          moda uyan ince bir çizgi beliriyor.
+        </p>
+        <figure>
+          <img src={editor} alt="Dock uygulamalarının listelendiği ve Calculator ile Weather arasında bir ayraç satırı olan düzenleyici penceresi" loading="lazy" />
+          <figcaption>Dock'taki tüm uygulamalar ve ayraçlar tek listede. Sürükle, sonra Dock'a Uygula.</figcaption>
+        </figure>
+
+        <h2>Nasıl çalışıyor</h2>
+        <ol>
+          <li>
+            <strong>Ayraç Ekle</strong>, Apple'ın kendi <code>small-spacer-tile</code>'ını Dock'a ekliyor: yarım ikon
+            genişliğinde bir boşluk.
+          </li>
+          <li>
+            Uygulama her boşluğun yerini Erişilebilirlik API'si üzerinden okuyor (<code>AXSpacerDockItem</code>).
+          </li>
+          <li>
+            Şeffaf, tıklamaları geçiren bir pencere her boşluğun üzerine, yerleşik ayraç gibi görünen ince bir çizgi
+            çiziyor.
+          </li>
+        </ol>
+        <p>
+          Dock altta, solda ya da sağda olsa da çalışıyor; yandaki Dock'ta çizgiler yatay. Bir pencere açıkken normal
+          bir uygulama gibi davranıyor; kapatınca sadece menü çubuğu ikonu kalıyor. Ayarlar'da dil (English /
+          Türkçe), Girişte Aç, Çıkınca Çizgileri Koru ve Erişilebilirlik durumu var.
+        </p>
+
+        <h2>Sınırlar</h2>
+        <ul>
+          <li>Çizgiler Dock'u saniyede 3 kez takip ediyor, bu yüzden Dock büyütmesinin biraz gerisinde kalıyorlar.</li>
+        </ul>
+
+        <h2>Dene</h2>
+        <p>macOS 13+, Apple Silicon ve Intel:</p>
+        <pre>
+          <code>curl -fsSL https://dock-dividers.armanalis.workers.dev/install.sh | sh</code>
+        </pre>
+        <p>
+          Sonra Dock ikonlarının yerini okuyabilmesi için <strong>Sistem Ayarları → Gizlilik ve Güvenlik →
+          Erişilebilirlik</strong>'te izin ver.
+        </p>
+      </>
+    ),
+  },
 };
 
 export default post;

@@ -104,6 +104,98 @@ const post: Post = {
       </p>
     </>
   ),
+  tr: {
+    summary: "Dört yıldır İtalya'da yaşıyorum ve İtalyancamın gelişmeye devam etmesini istiyorum. Popüler uygulamalar ödev gibi geldi, ben de onların yerine hızlı 1v1 maçlar ve günlük kelime oyunları yaptım.",
+    liveLabel: "Italiarena'yı oyna",
+    body: (
+      <>
+        <p>
+          2022'de Politecnico di Torino'da okumak için Torino'ya taşındım ve dört yıldır İtalya benim evim. İtalyanca
+          burada günlük hayatımın bir parçası ve ne kadar çok kullanırsam o kadar çok geliştirmek istiyorum: daha
+          zengin bir kelime hazinesi, daha temiz bir gramer ve gerçek sohbetlerde daha hızlı cevaplar.
+        </p>
+        <p>
+          Popüler uygulamaları denedim (biri Buolingo ile kafiyeli), ama hepsi ödev gibi geldi: aynı tür
+          alıştırmalar tekrar tekrar, İtalya'da gerçekten duyduğun dilden çok seriyi korumaya göre tasarlanmış. Ben
+          ve arkadaşlarımın çoğu sadece seri bozulmasın diye günde iki dakika İtalyanca çalışır olduk. Açmayı iple
+          çekeceğim ve gerçekten başında kalacağım bir pratik istedim.
+        </p>
+        <p>
+          Ben de yaptım: kısa, rekabetçi ve eğlenceli. Kartlarla ezber yerine gerçek insanlara karşı oynuyorsun.
+          İtalyanca ile başladı, adı da oradan geliyor, şimdi İngilizce, Almanca, İspanyolca ve Danca da var.
+        </p>
+
+        <h2>İçinde neler var</h2>
+
+        <h3>Arena: canlı 1v1 maçlar</h3>
+        <p>
+          Ana oyun. Her turda gramer, kelime, boşluk doldurma ve deyimler üzerine on süreli soru. Seviyendeki biriyle
+          eşleşiyorsun (A1'den C2'ye) ve doğru cevabı ne kadar hızlı verirsen o kadar çok puan alıyorsun. On sorudan
+          sonra berabere kalırsanız tek bir ani ölüm sorusu kazananı belirliyor. Çevrimiçi kimse yok mu? Bir bota
+          karşı hemen başla, beklemek yok.
+        </p>
+
+        <h3>Picture Duel</h3>
+        <p>
+          Bir seviye ve konu seç, linki bir arkadaşına gönder ve 60 saniyelik saatin bitmeden resimlerde ne olduğunu
+          söyle, satranç saati gibi. Zor modda cevap ancak doğru artikelle sayılıyor.
+        </p>
+
+        <h3>Günlük oyunlar</h3>
+        <ul>
+          <li>
+            <strong>Wordle</strong>, ama öğrendiğin dilde.
+          </li>
+          <li>
+            <strong>Word Wheel:</strong> alfabedeki her harf için bir ipucu.
+          </li>
+          <li>
+            <strong>Sprint'ler</strong>, bir türlü oturmayan şeyler için: artikeller (il·lo·la, der·die·das),
+            un·uno·una ve edatlar (di·a·da, in·an·auf, in·on·at). En sevdiklerim bunlar.
+          </li>
+        </ul>
+        <p>
+          Her günlük oyunda seviye başına günde bir puanlı tur var, sonra pratik yapmaya devam edebiliyorsun. Geçmiş
+          günlerin arşivi ile Normal ve Zor mod da var.
+        </p>
+
+        <h3>Hatalardan öğrenmek</h3>
+        <p>
+          Her maçtan sonra yanlışlarını gözden geçirebiliyorsun. Hataların, oturana kadar aralıklı tekrar günlerinde
+          geri geliyor, telaffuzu dinleyebiliyorsun ve bir yapay zeka cevabın neden doğru olduğunu açıklıyor
+          (Groq API üzerinden gpt-oss-120b).
+        </p>
+
+        <h3>Arkadaşlar ve sıralama</h3>
+        <p>
+          Arkadaş ekle, onlara meydan oku ve bugünkü skorlarınızı yan yana gör (sadece skorlar, cevaplar asla).
+          Benim gibi rekabetçiysen bir de sıralama tablosu var.
+        </p>
+
+        <h3>Daha iyi sorular, birlikte</h3>
+        <p>
+          Oyuncular hatalı bir soruyu bildirebiliyor ya da kendi sorularını gönderebiliyor. Yeni soruları önce yapay
+          zeka kontrol ediyor, sonra ben inceliyorum; böylece soru bankası sürekli daha iyi oluyor.
+        </p>
+
+        <h3>Fark yaratan küçük şeyler</h3>
+        <ul>
+          <li>Seçtiğin saatte isteğe bağlı hatırlatmalar: serin tehlikedeyse, tekrar zamanı geldiyse ya da günlük maç için.</li>
+          <li>Ana ekranına ekle, iPhone ve Android'de uygulama gibi çalışsın.</li>
+          <li>Misafir modu: kayıt olmadan oynayabilirsin.</li>
+        </ul>
+
+        <h2>Nasıl çalışıyor</h2>
+        <p>
+          Merak edenler için: Vercel üzerinde Next.js ve Supabase (Postgres, Auth, Realtime). Ayrı bir oyun sunucusu
+          yok; maçın kendisi veritabanında bir satır ve iki oyuncunun tarayıcısı da onunla senkron kalıyor. Zamanlama
+          telefonlardan değil veritabanından geliyor ve skorlar sunucuda hesaplanıyor; yani birinin saati kaysa da ya
+          da biri hile yapmaya çalışsa da maçlar adil kalıyor.
+        </p>
+        <p>Bu dillerden birini öğreniyorsan gel benimle bir maç at.</p>
+      </>
+    ),
+  },
 };
 
 export default post;
