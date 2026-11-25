@@ -16,6 +16,7 @@ import BlogPreview from './components/BlogPreview';
 import PostPage from './components/PostPage';
 import BlogNav from './components/BlogNav';
 import { postBySlug } from './content';
+import { scrollToSection } from './scroll';
 
 // Pages are plain URLs (/blog, /blog/<slug>, /<slug>); links are full page loads.
 function currentPage() {
@@ -36,9 +37,8 @@ function App() {
         if (page.kind === 'post') document.title = `${page.post.title} | Ali Arman Dai`;
         if (page.kind === 'blog') document.title = 'Blog | Ali Arman Dai';
         // Links from other pages land on /#section.
-        const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
-        if (target) target.scrollIntoView();
-        else window.scrollTo({top: 0, left: 0});
+        const id = window.location.hash.slice(1);
+        if (!id || !scrollToSection(id)) window.scrollTo({top: 0, left: 0});
       }, [page]);
 
     useEffect(() => {

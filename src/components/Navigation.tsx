@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import { scrollToSection as scrollToId } from "../scroll";
 
 export const navItems = [
   ['About', 'about'],
@@ -27,9 +28,8 @@ function Navigation({ mode, modeChange }: Props) {
   // No behavior option: html { scroll-behavior } decides, so reduced motion is respected.
   // On the blog pages the sections don't exist: Blog goes to /blog, the rest back to the home page.
   const scrollToSection = (section: string) => {
-    const target = document.getElementById(section);
-    if (target) target.scrollIntoView();
-    else if (section === 'blog') window.location.href = '/blog';
+    if (scrollToId(section)) return;
+    if (section === 'blog') window.location.href = '/blog';
     else window.location.href = section === 'home' ? '/' : `/#${section}`;
   };
 
